@@ -27,14 +27,11 @@ export default function AdminLogin() {
       .then(response => {
         if (response.data.status===200) {
           alert("Login Successful");
-          navigate("/admin-panel"); // Redirect on success
-        } else {
-          alert("Login Failed");
-        }
+          navigate("/admin-panel");  // Redirect to admin panel
+        } 
       })
       .catch(error => {
-        console.error("Login Error:", error);
-        alert("Something went wrong");
+         alert("Invalid username or password");
       });
   }
 
