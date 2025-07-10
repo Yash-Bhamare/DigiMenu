@@ -12,11 +12,15 @@ export default function AdminPanel() {
 
   const navigate = useNavigate();
   function handleLogout() {
-      navigate("/admin-login");
-    
-  }
+     if (window.confirm("Are you sure you want to logout?"))
+      {
+       alert("Logged out successfully!");
+       navigate("/admin-login");
+      }
 
-  return (
+  }
+    
+  return (  
     <>
       {/* Navbar */}
       <Navbar bg="dark" variant="dark" className="px-3">

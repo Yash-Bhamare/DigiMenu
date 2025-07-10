@@ -31,7 +31,7 @@ export default function AdminLogin() {
         } 
       })
       .catch(error => {
-         alert("Invalid username or password");
+         alert("Something went wrong. Please try again.");
       });
   }
 

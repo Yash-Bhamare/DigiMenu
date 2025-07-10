@@ -6,6 +6,7 @@ import About from './About'
 import Contact from './Contact'
 import AdminLogin from '../admin/AdminLogin'
 import AdminPanel from '../admin/AdminPanel'
+
 import './Sty.css';
 function App() {
 
@@ -43,7 +44,9 @@ function App() {
           <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/admin-login" element={<AdminLogin />}></Route>
+          
           <Route path="/admin-panel" element={<AdminPanel />}></Route>
+  
         </Routes>
 
 
