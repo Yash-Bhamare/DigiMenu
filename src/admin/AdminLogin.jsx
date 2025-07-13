@@ -23,7 +23,7 @@ export default function AdminLogin() {
       uname:un,
       pass:ps
     }
-    axios.post("http://localhost:3000/admin-login",dt)
+    axios.post("http://localhost:3000/admin-login",dt,{ withCredentials: true })
       .then(response => {
         if (response.data.status===200) {
           alert("Login Successful");
@@ -31,6 +31,7 @@ export default function AdminLogin() {
         } 
       })
       .catch(error => {
+        console.log(error);
          alert("Something went wrong. Please try again.");
       });
   }

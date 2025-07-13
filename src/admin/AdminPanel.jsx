@@ -11,14 +11,23 @@ export default function AdminPanel() {
   const [activeComponent, setActiveComponent] = useState("dashboard");
 
   const navigate = useNavigate();
-  function handleLogout() {
-     if (window.confirm("Are you sure you want to logout?"))
-      {
-       alert("Logged out successfully!");
-       navigate("/admin-login");
-      }
 
+  function handleLogout() {
+  if (window.confirm("Are you sure you want to logout?")) {
+    fetch("http://localhost:3000/admin-logout", {
+      method: "GET",
+      credentials: "include" // send cookies with request
+    })
+    .then(() => {
+      alert("Logged out successfully!");
+      navigate("/admin-login"); // Redirect to login
+    })
+    .catch((err) => {
+      console.error("Logout error:", err);
+      alert("Logout failed!");
+    });
   }
+}
     
   return (  
     <>
