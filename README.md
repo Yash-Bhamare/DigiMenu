@@ -69,7 +69,6 @@ http://localhost:3000
 
 ## Folder Structure
 ```sh
-
 DigiMenu/
 ├── node_modules/
 ├── public/
@@ -111,4 +110,3 @@ DigiMenu/
 - Expand user roles beyond admin (e.g., waiter or manager).
 
 ---
-
