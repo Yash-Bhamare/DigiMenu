@@ -42,6 +42,7 @@ export default function AddFoodCat() {
             .then(response => {
                 if (response.data.status == 201) {
                     alert("Add successfully")
+                    cntapi()
                 }
                 else{
                     alert("Add failed")
@@ -79,6 +80,7 @@ export default function AddFoodCat() {
             .then(response => {
             if (response.data.status==200) {
                     alert("Delete successfully")
+                    cntapi()
                 }
                 else{
                     alert("Delete Failed");
@@ -94,7 +96,6 @@ export default function AddFoodCat() {
       .then(response => {
         let ar = response.data.food
         setData(ar)
-        console.log(ar)
       })
    }
 

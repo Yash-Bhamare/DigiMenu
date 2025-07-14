@@ -10,7 +10,6 @@ export default function Menu() {
       .then(response => {
         let ar = response.data.menu
         setData(ar)
-        console.log(ar)
       })
   }
   useEffect(() => { //onload()

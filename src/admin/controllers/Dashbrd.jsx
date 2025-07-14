@@ -9,7 +9,6 @@ export default function Dashbrd() {
       .then(response => {
         let ar = response.data.menu
         setData(ar)
-        //console.log(ar)
       })
   }
 

@@ -46,6 +46,8 @@ export default function AddQty() {
       .then(response => {
         if (response.data.status == 201) {
           alert("Add Successfully")
+          cntapi()
+      
         }
         else {
           alert("Add Failed")
@@ -84,6 +86,7 @@ export default function AddQty() {
       .then(response => {
         if (response.data.status == 200) {
           alert("Delete successfully")
+           cntapi();
         }
         else {
           alert("Delete Failed");
@@ -102,7 +105,6 @@ export default function AddQty() {
       .then(response => {
         let arr = response.data.qty_mast;
         setdata(arr)
-        console.log(arr)
      })
   }
 

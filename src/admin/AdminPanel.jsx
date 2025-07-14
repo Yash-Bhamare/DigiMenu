@@ -23,7 +23,6 @@ export default function AdminPanel() {
       navigate("/admin-login"); // Redirect to login
     })
     .catch((err) => {
-      console.error("Logout error:", err);
       alert("Logout failed!");
     });
   }

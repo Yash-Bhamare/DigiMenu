@@ -29,9 +29,8 @@ export default function AdminLogin() {
           alert("Login Successful");
           navigate("/admin-panel");  // Redirect to admin panel
         } 
-      })
+      })  
       .catch(error => {
-        console.log(error);
          alert("Something went wrong. Please try again.");
       });
   }
