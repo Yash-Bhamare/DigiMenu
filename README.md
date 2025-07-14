@@ -69,6 +69,7 @@ http://localhost:3000
 
 ## Folder Structure
 ```sh
+
 DigiMenu/
 ├── node_modules/
 ├── public/
