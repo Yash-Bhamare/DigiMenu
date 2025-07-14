@@ -69,38 +69,36 @@ http://localhost:3000
 
 ## Folder Structure
 ```sh
-DigiMenu-FullStack/
-├── backend/
-│    ├── server.js                 # Main server file   
-│    ├── db.js                     # Database connection file  
-│    ├── routes/                   # Route definitions  
-│    │   ├── adminRoutes.js  
-│    │   ├── menuRoutes.js
-│    │   ├── foodGroupRoutes.js  
-│    │   ├── quantityRoutes.js  
-│    ├── controllers/               # Controllers handle request logic  
-│    │   ├── adminController.js     #Login for admin endpoints
-│    │   ├── menuController.js      #Login for menu endpoints
-│    │   ├── foodGroupController.js # Logic for food group endpoints  
-│    │   ├── quantityController.js  # Logic for quantity endpoints  
-│    ├── .env                       # Environment variables  
-│    ├── package.json               # Project dependencies  
-│    └── README.md                  # Project documentation
-│
-├── frontend/
-│   ├── node_modules/            # Libraries and dependencies  
-│   ├── public/                  # Assets folder (images, etc.)  
-│   ├── src/                     # Source folder containing main React code  
-│   │   ├── main.jsx             # Main entry point for React  
-│   │   ├── admin/               # Admin-related React components  
-│   │   └── components/          # Reusable components  
-│   │  
-│   ├── index.html               # Main HTML file  
-│   ├── package.json             # Project dependencies  
-│   ├── .gitignore               # Ignore unnecessary files  
-│   └── README.md                # Project documentation (this file) 
-│  
-└── README.md                    # Project documentation  
+DigiMenu/
+├── node_modules/
+├── public/
+├── src/
+│   ├── admin/
+│   │   ├── controllers/
+│   │   │   ├── AddFoodCat.jsx
+│   │   │   ├── AddMenu.jsx
+│   │   │   ├── AddQty.jsx
+│   │   │   ├── Crd.css
+│   │   │   ├── Crd.jsx
+│   │   │   ├── Dashbrd.jsx
+│   │   ├── AdminLogin.jsx
+│   │   ├── AdminPanel.jsx
+│   │   ├── ProtectedRoute.jsx
+│   ├── component/                  
+│   │   ├── About.jsx               
+│   │   ├── App.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Ftr.jsx
+│   │   ├── Home.jsx
+│   │   ├── Menu.jsx
+│   │   ├── Sty.css
+│   ├── main.jsx
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
 
 ```
 
