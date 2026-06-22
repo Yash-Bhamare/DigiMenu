@@ -1,5 +1,5 @@
 
-import axios from "axios";
+import api from "../api";
 import { useState } from "react";
 
 function Contact() {
@@ -33,7 +33,7 @@ function Contact() {
       subject: subject,
       message: message
     };
-    axios.post("http://localhost:3000/ContactUS",dt)
+    api.post("/ContactUS",dt)
     .then(response=>{
     if (response.status===200) {
       alert("Your message has been sent. Thank you!");

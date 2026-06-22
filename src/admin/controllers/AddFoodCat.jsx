@@ -1,4 +1,4 @@
-import axios from "axios"
+import api from "../../api";
 import { useState, useEffect } from "react"
 import Button from 'react-bootstrap/Button';
 import { Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
@@ -38,7 +38,7 @@ export default function AddFoodCat() {
         const ct = {
             category: mn
         }
-        axios.post("http://localhost:3000/addfoodcat", ct)
+        api.post("/addfoodcat", ct)
             .then(response => {
                 if (response.data.status == 201) {
                     alert("Add successfully")
@@ -59,7 +59,7 @@ export default function AddFoodCat() {
             fid:efid,
             category:ecat
         }
-        axios.put("http://localhost:3000/updatefoodcat",ect)
+        api.put("/updatefoodcat",ect)
             .then(response => {
                 if (response.data.status == 201) {
                     alert("Update successfully")
@@ -76,7 +76,7 @@ export default function AddFoodCat() {
         const del = {
             fid:id
         }
-        axios.delete("http://localhost:3000/delfoodByFid",{data:del})
+        api.delete("/delfoodByFid",{data:del})
             .then(response => {
             if (response.data.status==200) {
                     alert("Delete successfully")
@@ -92,7 +92,7 @@ export default function AddFoodCat() {
     const [data, setData] = useState([])
   function cntapi(){
     
-    axios.get("http://localhost:3000/food")
+    api.get("/food")
       .then(response => {
         let ar = response.data.food
         setData(ar)

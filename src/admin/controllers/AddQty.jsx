@@ -1,4 +1,4 @@
-import axios from "axios"
+import api from "../../api";
 import { useState, useEffect } from "react"
 import Button from 'react-bootstrap/Button';
 import { Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
@@ -42,7 +42,7 @@ export default function AddQty() {
     const ad = {
       size: qt
     }
-    axios.post("http://localhost:3000/addqty", ad)
+    api.post("/addqty", ad)
       .then(response => {
         if (response.data.status == 201) {
           alert("Add Successfully")
@@ -65,7 +65,7 @@ export default function AddQty() {
             qid:eqid,
             size:eqt
         }
-        axios.put("http://localhost:3000/updateqty",eqty)
+        api.put("/updateqty",eqty)
             .then(response => {
                 if (response.data.status == 201) {
                     alert("Update successfully")
@@ -82,7 +82,7 @@ export default function AddQty() {
     const del = {
       qid: id
     }
-    axios.delete("http://localhost:3000/delqtyByQid", { data: del })
+    api.delete("/delqtyByQid", { data: del })
       .then(response => {
         if (response.data.status == 200) {
           alert("Delete successfully")
@@ -101,7 +101,7 @@ export default function AddQty() {
   const [data, setdata] = useState([])
   function cntapi(){
 
-    axios.get("http://localhost:3000/qty")
+    api.get("/qty")
       .then(response => {
         let arr = response.data.qty_mast;
         setdata(arr)

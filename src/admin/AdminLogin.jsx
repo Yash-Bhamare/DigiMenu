@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Card, Container, Row, Col } from 'react-bootstrap';
-import axios from "axios"
+import api from "../api";
 import { useNavigate } from 'react-router-dom';
 
 export default function AdminLogin() {
@@ -23,7 +23,7 @@ export default function AdminLogin() {
       uname:un,
       pass:ps
     }
-    axios.post("http://localhost:3000/admin-login",dt,{ withCredentials: true })
+    api.post("/admin-login",dt,{ withCredentials: true })
       .then(response => {
         if (response.data.status===200) {
           alert("Login Successful");

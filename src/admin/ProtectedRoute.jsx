@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import axios from "axios";
+import api from "../api";
 import { useEffect, useState } from "react";
 
 export default function ProtectedRoute({ children }) {
@@ -7,7 +7,7 @@ export default function ProtectedRoute({ children }) {
   const [isAuth, setIsAuth] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/check-auth", { withCredentials: true })
+    api.get("/check-auth", { withCredentials: true })
       .then((res) => {
         if (res.data.status === 200) {
           setIsAuth(true);

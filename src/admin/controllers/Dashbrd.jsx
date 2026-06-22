@@ -1,11 +1,11 @@
-import axios from "axios"
+import api from "../../api";
 import { useState, useEffect } from "react"
 import Crd from './Crd.jsx'
 export default function Dashbrd() {
 
   const [data, setData] = useState([])
   function cntapi() {
-    axios.get("http://localhost:3000/menucard")
+    api.get("/menucard")
       .then(response => {
         let ar = response.data.menu
         setData(ar)

@@ -1,4 +1,4 @@
-import axios from "axios"
+import api from "../../api";
 import { useState, useEffect } from "react"
 import Button from 'react-bootstrap/Button';
 import { Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
@@ -74,7 +74,7 @@ export default function Menu() {
       fid: fid,
       qid: qid
     }
-    axios.post("http://localhost:3000/addmenu", dt)
+    api.post("/addmenu", dt)
       .then(response => {
         if (response.data.status == 201) {
           alert(" Add success")
@@ -96,7 +96,7 @@ export default function Menu() {
       fid: efid,
       qid: eqid
     }
-    axios.put("http://localhost:3000/updatemenu", edt)
+    api.put("/updatemenu", edt)
       .then(response => {
         if (response.data.status == 201) {
           alert(" Update successfully")
@@ -112,7 +112,7 @@ export default function Menu() {
     const dt = {
       mid: id
     }
-    axios.delete("http://localhost:3000/delmenuById", {
+    api.delete("/delmenuById", {
       data: dt
     })
       .then(response => {
@@ -124,7 +124,7 @@ export default function Menu() {
   }
   const [data, setData] = useState([])
   function cntapi() {
-    axios.get("http://localhost:3000/menu")
+    api.get("/menu")
       .then(response => {
         let ar = response.data.menu
         setData(ar)

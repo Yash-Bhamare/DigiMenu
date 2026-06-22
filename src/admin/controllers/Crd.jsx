@@ -4,7 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
-import axios from "axios"
+import api from "../../api";
 import { useState, useEffect } from "react"
 import "./Crd.css" 
 
@@ -15,7 +15,7 @@ const [fcnt, setFcnt] = useState(0);
 const [qcnt, setQcnt] = useState(0);
 
   function cntapi() {
-    axios.get("http://localhost:3000/cnt")
+    api.get("/cnt")
       .then(response => {
         setMcnt(response.data.menu_cnt);
         setFcnt(response.data.foodcat_cnt);

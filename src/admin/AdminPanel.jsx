@@ -6,6 +6,7 @@ import AddMenu from './controllers/AddMenu';
 import AddFoodCat from './controllers/AddFoodCat';
 import AddQty from './controllers/AddQty';
 import { useNavigate } from 'react-router-dom';
+import api from "../api";
 
 export default function AdminPanel() {
   const [activeComponent, setActiveComponent] = useState("dashboard");
@@ -14,7 +15,7 @@ export default function AdminPanel() {
 
   function handleLogout() {
   if (window.confirm("Are you sure you want to logout?")) {
-    fetch("http://localhost:3000/admin-logout", {
+    fetch("/admin-logout", {
       method: "GET",
       credentials: "include" // send cookies with request
     })
